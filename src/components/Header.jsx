@@ -1,5 +1,11 @@
+import '../index.css';
+
 function Header() {
-  return <h1>- FAST REACT PIZZA Co. -</h1>;
+  return (
+    <header className="header">
+      <h1>FAST REACT PIZZA Co.</h1>
+    </header>
+  );
 }
 
 export default Header;
