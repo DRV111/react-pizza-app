@@ -1,18 +1,15 @@
 import '../index.css';
 import PropTypes from 'prop-types';
 
-function Pizza(props) {
+function Pizza({ pizzaObj }) {
   return (
-    <li className="pizza">
-      <img src={props.pizzaObj.photoName} alt={props.pizzaObj.name} />
+    <li className={`pizza ${pizzaObj.soldOut ? 'sold-out' : ''}`}>
+      <img src={pizzaObj.photoName} alt={pizzaObj.name} />
       <div>
-        <h3>{props.pizzaObj.name}</h3>
-        <p>{props.pizzaObj.ingredients}</p>
-        <span>{props.pizzaObj.price}</span>
+        <h3>{pizzaObj.name}</h3>
+        <p>{pizzaObj.ingredients}</p>
+        <span>{pizzaObj.soldOut ? 'SOLD OUT!' : pizzaObj.price}</span>
       </div>
-      {/* <p className="soldOut">
-        {props.pizzaObj.soldOut ? 'SOLD OUT' : 'AVAILABLE'}
-      </p> */}
     </li>
   );
 }
