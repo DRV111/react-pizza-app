@@ -1,7 +1,7 @@
 import '../index.css';
 
 const hours = new Date().getHours();
-const openHours = 10;
+const openHours = 8;
 const closeHours = 22;
 const isOpen = hours >= openHours && hours <= closeHours;
 
@@ -17,11 +17,19 @@ function Footer() {
         ? 'Open! Come, and enjoy our pizza!'
         : 'closed. We are waiting for you tomorrow!'} */}
 
-      {isOpen && (
+      {isOpen ? (
         <div className="order">
-          <p>We are open untill {closeHours}:00. Come, and enjoy our pizza!</p>
+          <p>
+            We are open untill {closeHours}:00. Come, visit us and enjoy our
+            pizza!
+          </p>
           <button className="btn">Order Now</button>
         </div>
+      ) : (
+        <p>
+          We are closed. We are waiting for you tomorrow! from {openHours}:00
+          until {closeHours}:00!
+        </p>
       )}
     </footer>
   );
